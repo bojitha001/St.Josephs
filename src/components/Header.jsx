@@ -27,11 +27,6 @@ const Header = () => {
             <span className="flex items-center gap-1"><Phone className="h-3 w-3" /> +94 11 2930 XXX</span>
             <span className="hidden sm:flex items-center gap-1"><Mail className="h-3 w-3" /> info@sjcwattala.lk</span>
           </div>
-          <div className="flex items-center gap-3">
-            <Link to="/digital-access" className="hover:text-gold transition-colors">Student Portal</Link>
-            <span className="opacity-40">|</span>
-            <Link to="/digital-access" className="hover:text-gold transition-colors">Staff Portal</Link>
-          </div>
         </div>
       </div>
 
