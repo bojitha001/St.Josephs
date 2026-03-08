@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen, Users, Trophy, Calendar, Cross, GraduationCap } from "lucide-react";
 import Layout from "@/components/Layout";
-import heroCampus from "@/assets/hero-campus.jpg";
-import chapel from "@/assets/chapel.jpg";
-import studentsSports from "@/assets/students-sports.jpg";
-import schoolCrest from "@/assets/school-crest.png";
+
+const schoolLogo = "/LOGO.jpg";
+
+const heroCampus = "/photo-01.jpg";
+const rectorsPhoto = "/photo-04.jpg";
+const studentsSports = "/photo-05.jpg";
 
 const quickLinks = [
   { icon: GraduationCap, label: "Admissions", path: "/admissions", color: "bg-gold" },
@@ -36,7 +38,7 @@ const Index = () => {
         <div className="container relative z-10">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
-              <img src={schoolCrest} alt="Crest" className="h-16 w-16 object-contain drop-shadow-lg" />
+              <img src={schoolLogo} alt="St. Joseph's College Logo" className="h-16 w-16 object-contain rounded-full drop-shadow-lg" />
             </div>
             <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary-foreground mb-4 leading-tight">
               St. Joseph's College<br />
@@ -90,7 +92,7 @@ const Index = () => {
               <p className="text-sm text-muted-foreground">Rector, St. Joseph's College Wattala</p>
             </div>
             <div className="relative">
-              <img src={chapel} alt="College Chapel" className="rounded-lg shadow-xl" />
+              <img src={rectorsPhoto} alt="Rector's message" className="rounded-lg shadow-xl w-full object-cover max-h-96" />
               <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-gold/20 rounded-lg -z-10" />
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-lg -z-10" />
             </div>

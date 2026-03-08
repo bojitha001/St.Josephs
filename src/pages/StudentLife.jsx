@@ -1,7 +1,14 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
-import studentsSports from "@/assets/students-sports.jpg";
 import { Trophy, Music, Users, Star, Shield, Palette } from "lucide-react";
+
+const heroImage = "/photo-03.jpg";
+
+const galleryPhotos = [
+  "/photo-19.jpg", "/photo-20.jpg", "/photo-21.jpg",
+  "/photo-22.jpg", "/photo-23.jpg", "/photo-24.jpg",
+  "/photo-25.jpg", "/photo-26.jpg",
+];
 
 const clubs = [
   "Science Society", "Literary Society", "Debating Club", "IT Club",
@@ -25,7 +32,7 @@ const achievements = [
 const StudentLife = () => {
   return (
     <Layout>
-      <PageHero title="Student Life" subtitle="Where talent meets opportunity — beyond the classroom" image={studentsSports} />
+      <PageHero title="Student Life" subtitle="Where talent meets opportunity — beyond the classroom" image={heroImage} />
 
       <section className="py-20">
         <div className="container">
@@ -84,6 +91,22 @@ const StudentLife = () => {
                 Daily prayer, weekly masses, and annual retreats nurture the spiritual growth of our students in the Catholic tradition.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="section-heading">Life at SJC — In Pictures</h2>
+            <p className="section-subheading">Moments that define the Josephian experience</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {galleryPhotos.map((src, i) => (
+              <div key={i} className="aspect-square overflow-hidden rounded-lg shadow-md">
+                <img src={src} alt={`School life ${i + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              </div>
+            ))}
           </div>
         </div>
       </section>

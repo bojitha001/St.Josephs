@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
-import heroCampus from "@/assets/hero-campus.jpg";
 import { CheckCircle, ArrowRight, FileText, DollarSign } from "lucide-react";
+
+const heroCampus = "/photo-30.jpg";
 
 const reasons = [
   "Catholic values-based education rooted in tradition",

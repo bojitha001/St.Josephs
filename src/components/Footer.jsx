@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Youtube, MapPin, Phone, Mail } from "lucide-react";
-import schoolCrest from "@/assets/school-crest.png";
+
+const schoolLogo = "/LOGO.jpg";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={schoolCrest} alt="Crest" className="h-12 w-12 object-contain brightness-0 invert" />
+              <img src={schoolLogo} alt="St. Joseph's College Logo" className="h-12 w-12 object-contain rounded-full" />
               <div>
                 <h3 className="font-heading text-lg font-bold">St. Joseph's College</h3>
                 <p className="text-sm opacity-70">Wattala, Sri Lanka</p>

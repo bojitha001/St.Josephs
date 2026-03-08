@@ -1,7 +1,8 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
-import heroCampus from "@/assets/hero-campus.jpg";
 import { GraduationCap, Users, Monitor, FileText, UserCircle, Heart, Briefcase, ExternalLink } from "lucide-react";
+
+const heroCampus = "/photo-29.jpg";
 
 const portals = [
   { icon: GraduationCap, title: "Student Portal", desc: "Access assignments, results, timetables and student resources.", link: "#" },

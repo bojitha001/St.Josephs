@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
-import heroCampus from "@/assets/hero-campus.jpg";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Youtube, Send } from "lucide-react";
 import { toast } from "sonner";
+
+const heroCampus = "/photo-31.jpg";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
@@ -72,11 +73,17 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="mt-8 rounded-lg overflow-hidden border h-64 bg-secondary flex items-center justify-center">
-                <div className="text-center text-muted-foreground">
-                  <MapPin className="h-8 w-8 mx-auto mb-2 opacity-30" />
-                  <p className="text-sm">Google Map will be embedded here</p>
-                </div>
+              <div className="mt-8 rounded-lg overflow-hidden border h-64">
+                <iframe
+                  title="St. Joseph's College Wattala Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0!2d79.8916!3d7.0078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2f8f34ef9fa9f%3A0x7976b888ec350cc4!2sWattala%2011300!5e0!3m2!1sen!2slk!4v1709000000000!5m2!1sen!2slk"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
 

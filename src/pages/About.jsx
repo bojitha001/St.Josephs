@@ -1,9 +1,11 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
-import heroCampus from "@/assets/hero-campus.jpg";
-import chapel from "@/assets/chapel.jpg";
-import schoolCrest from "@/assets/school-crest.png";
 import { BookOpen, Eye, Target, Award, Users } from "lucide-react";
+
+const heroCampus = "/photo-02.jpg";
+const storyPhoto = "/photo-15.jpg";
+const storyPhoto2 = "/photo-16.jpg";
+const schoolLogo = "/LOGO.jpg";
 
 const milestones = [
   { year: "Founded", desc: "Established by Catholic missionaries to serve the youth of Wattala" },
@@ -37,7 +39,10 @@ const About = () => {
                 <p>Our college has consistently produced outstanding individuals who have excelled in academia, sports, arts, and public service, upholding the Josephian values of discipline, faith, and service.</p>
               </div>
             </div>
-            <img src={chapel} alt="College Chapel" className="rounded-lg shadow-xl" />
+            <div className="grid grid-cols-2 gap-3">
+              <img src={storyPhoto} alt="College grounds" className="rounded-lg shadow-xl w-full object-cover h-48" />
+              <img src={storyPhoto2} alt="College life" className="rounded-lg shadow-xl w-full object-cover h-48 mt-6" />
+            </div>
           </div>
         </div>
       </section>
@@ -64,7 +69,7 @@ const About = () => {
       <section className="py-20">
         <div className="container">
           <div className="flex flex-col md:flex-row items-center gap-12">
-            <img src={schoolCrest} alt="School Crest" className="h-48 w-48 object-contain" />
+            <img src={schoolLogo} alt="School Logo" className="h-48 w-48 object-contain rounded-2xl shadow-lg" />
             <div>
               <h2 className="section-heading gold-underline">School Crest & Houses</h2>
               <p className="mt-6 text-muted-foreground leading-relaxed mb-6">

@@ -1,15 +1,21 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
-import heroCampus from "@/assets/hero-campus.jpg";
 import { Newspaper, Calendar, Image, Trophy, FileText } from "lucide-react";
 
+const heroCampus = "/photo-06.jpg";
+
+const galleryPhotos = [
+  "/photo-07.jpg", "/photo-08.jpg", "/photo-09.jpg",
+  "/photo-10.jpg", "/photo-11.jpg", "/photo-12.jpg",
+];
+
 const newsItems = [
-  { date: "Mar 5, 2026", title: "SJC Wattala Wins Inter-School Cricket Championship", category: "Sports" },
-  { date: "Feb 28, 2026", title: "A/L 2025 Results: 98% Pass Rate Achieved", category: "Academics" },
-  { date: "Feb 15, 2026", title: "Annual Prize Giving Ceremony 2025", category: "Events" },
-  { date: "Jan 20, 2026", title: "New Science Lab Inaugurated by Education Minister", category: "Campus" },
-  { date: "Jan 10, 2026", title: "Josephian Scouts Win Presidential Award", category: "Achievement" },
-  { date: "Dec 20, 2025", title: "Christmas Carol Service & Charity Drive", category: "Faith Life" },
+  { date: "Mar 5, 2026", title: "SJC Wattala Wins Inter-School Cricket Championship", category: "Sports", img: "/photo-13.jpg" },
+  { date: "Feb 28, 2026", title: "A/L 2025 Results: 98% Pass Rate Achieved", category: "Academics", img: "/photo-14.jpg" },
+  { date: "Feb 15, 2026", title: "Annual Prize Giving Ceremony 2025", category: "Events", img: "/photo-17.jpg" },
+  { date: "Jan 20, 2026", title: "New Science Lab Inaugurated by Education Minister", category: "Campus", img: "/photo-18.jpg" },
+  { date: "Jan 10, 2026", title: "Josephian Scouts Win Presidential Award", category: "Achievement", img: "/photo-32.jpg" },
+  { date: "Dec 20, 2025", title: "Christmas Carol Service & Charity Drive", category: "Faith Life", img: "/photo-05.jpg" },
 ];
 
 const events = [
@@ -35,7 +41,9 @@ const News = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {newsItems.map((item) => (
               <div key={item.title} className="bg-card rounded-lg border card-hover shadow-sm overflow-hidden">
-                <div className="h-2 bg-gold" />
+                <div className="h-40 overflow-hidden">
+                  <img src={item.img} alt={item.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-xs font-semibold text-gold bg-gold/10 px-2 py-1 rounded">{item.category}</span>
@@ -79,9 +87,9 @@ const News = () => {
               </div>
               <p className="text-muted-foreground mb-6">Browse moments from college events, sports days, and ceremonies. Photos will be updated regularly.</p>
               <div className="grid grid-cols-3 gap-2">
-                {[1, 2, 3, 4, 5, 6].map((i) => (
-                  <div key={i} className="aspect-square bg-secondary rounded-lg flex items-center justify-center">
-                    <Image className="h-6 w-6 text-muted-foreground/30" />
+                {galleryPhotos.map((src, i) => (
+                  <div key={i} className="aspect-square overflow-hidden rounded-lg">
+                    <img src={src} alt={`Gallery ${i + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
                   </div>
                 ))}
               </div>

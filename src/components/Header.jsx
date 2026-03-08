@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail } from "lucide-react";
-import schoolCrest from "@/assets/school-crest.png";
+
+const schoolLogo = "/LOGO.jpg";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -37,7 +38,7 @@ const Header = () => {
       <nav className="bg-card/95 backdrop-blur-md border-b shadow-sm">
         <div className="container flex items-center justify-between py-3">
           <Link to="/" className="flex items-center gap-3">
-            <img src={schoolCrest} alt="St. Joseph's College Crest" className="h-12 w-12 object-contain" />
+            <img src={schoolLogo} alt="St. Joseph's College Logo" className="h-12 w-12 object-contain rounded-full" />
             <div>
               <h1 className="font-heading text-lg font-bold text-primary leading-tight">St. Joseph's College</h1>
               <p className="text-xs text-muted-foreground">Wattala, Sri Lanka</p>

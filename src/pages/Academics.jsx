@@ -1,7 +1,9 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
-import classroom from "@/assets/classroom.jpg";
 import { BookOpen, FlaskConical, Monitor, Calendar, Award } from "lucide-react";
+
+const classroom = "/photo-27.jpg";
+const heroImage = "/photo-28.jpg";
 
 const levels = [
   { title: "Primary Section", grades: "Grade 1 – 5", desc: "A nurturing foundation in literacy, numeracy, and creative thinking with a focus on character formation." },
@@ -22,7 +24,7 @@ const facilities = [
 const Academics = () => {
   return (
     <Layout>
-      <PageHero title="Academics" subtitle="Excellence in teaching and learning at every level" image={classroom} />
+      <PageHero title="Academics" subtitle="Excellence in teaching and learning at every level" image={heroImage} />
 
       <section className="py-20">
         <div className="container">
