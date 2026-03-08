@@ -1,135 +1,136 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap') format('woff2');
+}
 
-@layer base {
-  :root {
-    --background: 40 20% 97%;
-    --foreground: 220 30% 15%;
+@font-face {
+    font-family: 'Source Sans 3';
+    src: url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap') format('woff2');
+}
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 30% 15%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 15%;
-
-    --primary: 220 60% 22%;
-    --primary-foreground: 40 30% 95%;
-
-    --secondary: 40 50% 92%;
-    --secondary-foreground: 220 60% 22%;
-
-    --muted: 220 15% 93%;
-    --muted-foreground: 220 10% 45%;
-
-    --accent: 43 90% 50%;
-    --accent-foreground: 220 60% 15%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 220 60% 22%;
-
-    --radius: 0.5rem;
-
-    --gold: 43 90% 50%;
-    --gold-light: 43 80% 70%;
-    --navy: 220 60% 22%;
-    --navy-light: 220 40% 35%;
-    --cream: 40 30% 95%;
-    --warm-gray: 30 10% 60%;
-
+@theme {
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Source Sans 3', sans-serif;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+    --color-background: hsl(40 20% 97%);
+    --color-foreground: hsl(220 30% 15%);
+
+    --color-card: hsl(0 0% 100%);
+    --color-card-foreground: hsl(220 30% 15%);
+
+    --color-popover: hsl(0 0% 100%);
+    --color-popover-foreground: hsl(220 30% 15%);
+
+    --color-primary: hsl(220 60% 22%);
+    --color-primary-foreground: hsl(40 30% 95%);
+
+    --color-secondary: hsl(40 50% 92%);
+    --color-secondary-foreground: hsl(220 60% 22%);
+
+    --color-muted: hsl(220 15% 93%);
+    --color-muted-foreground: hsl(220 10% 45%);
+
+    --color-accent: hsl(43 90% 50%);
+    --color-accent-foreground: hsl(220 60% 15%);
+
+    --color-destructive: hsl(0 84.2% 60.2%);
+    --color-destructive-foreground: hsl(210 40% 98%);
+
+    --color-border: hsl(220 15% 88%);
+    --color-input: hsl(220 15% 88%);
+    --color-ring: hsl(220 60% 22%);
+
+    --color-gold: hsl(43 90% 50%);
+    --color-gold-light: hsl(43 80% 70%);
+    --color-navy: hsl(220 60% 22%);
+    --color-navy-light: hsl(220 40% 35%);
+    --color-cream: hsl(40 30% 95%);
+    --color-warm-gray: hsl(30 10% 60%);
+
+    --radius: 0.5rem;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-body);
+    min-height: 100dvh;
+    background-color: hsl(40 20% 97%);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-    font-family: var(--font-body);
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
-  }
+    .container {
+        @apply mx-auto px-4 sm:px-6 lg:px-8;
+    }
 }
 
-@layer components {
-  .section-heading {
-    @apply text-3xl md:text-4xl font-bold text-primary mb-2;
-    font-family: var(--font-heading);
-  }
+@layer utilities {
+    .section-heading {
+        @apply text-3xl md:text-4xl font-bold text-primary mb-2;
+        font-family: var(--font-heading);
+    }
 
-  .section-subheading {
-    @apply text-lg text-muted-foreground mb-8;
-  }
+    .section-subheading {
+        @apply text-lg text-muted-foreground mb-8;
+    }
 
-  .gold-accent {
-    color: hsl(var(--gold));
-  }
+    .gold-accent {
+        color: var(--color-gold);
+    }
 
-  .gold-underline {
-    position: relative;
-    display: inline-block;
-  }
+    .gold-underline {
+        position: relative;
+        display: inline-block;
+    }
 
-  .gold-underline::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: hsl(var(--gold));
-  }
+    .gold-underline::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: var(--color-gold);
+    }
 
-  .hero-overlay {
-    background: linear-gradient(
-      to right,
-      hsl(var(--navy) / 0.85) 0%,
-      hsl(var(--navy) / 0.6) 50%,
-      hsl(var(--navy) / 0.3) 100%
-    );
-  }
+    .hero-overlay {
+        background: linear-gradient(
+            to right,
+            hsl(220 60% 22% / 0.85) 0%,
+            hsl(220 60% 22% / 0.6) 50%,
+            hsl(220 60% 22% / 0.3) 100%
+        );
+    }
 
-  .card-hover {
-    @apply transition-all duration-300;
-  }
+    .card-hover {
+        @apply transition-all duration-300;
+    }
 
-  .card-hover:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px -12px hsl(var(--navy) / 0.15);
-  }
+    .card-hover:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px -12px hsl(220 60% 22% / 0.15);
+    }
 
-  .nav-link {
-    @apply relative text-sm font-medium transition-colors;
-  }
+    .nav-link {
+        @apply relative text-sm font-medium transition-colors;
+    }
 
-  .nav-link::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300;
-    background: hsl(var(--gold));
-  }
+    .nav-link::after {
+        content: '';
+        @apply absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300;
+        background: var(--color-gold);
+    }
 
-  .nav-link:hover::after {
-    @apply w-full;
-  }
+    .nav-link:hover::after {
+        @apply w-full;
+    }
 }
